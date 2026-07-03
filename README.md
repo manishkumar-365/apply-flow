@@ -6,8 +6,7 @@ Instead of using notes or spreadsheets, ApplyFlow lets you easily add, edit, del
 
 ## 🌐 Live Demo
 
-- 🔗 **Live Project:** [Add Live Link Here]
-- 💻 **GitHub Repository:** [Add GitHub Link Here]
+- 🔗 **Live Project:** https://manishkumar-365.github.io/apply-flow/
 
 ---
 
