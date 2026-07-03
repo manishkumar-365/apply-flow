@@ -70,9 +70,6 @@ The **Edit** feature was the most challenging part of this project, but solving 
 
 Thanks for checking out my project! 😊
 
-## Demo Video
-
-![Demo](src/screenshots/demo-video.mp4)
 
 ## 📸 Screenshots
 
