@@ -69,3 +69,19 @@ The **Edit** feature was the most challenging part of this project, but solving 
 **Manish Kumar**
 
 Thanks for checking out my project! 😊
+
+## 📸 Screenshots
+
+### 🖥️ Desktop
+
+![Home](src/screenshots/desktop-home.png)
+
+![Search & Filter](src/screenshots/status-filter.png)
+
+![Search & Filter](src/screenshots/search-filter.png)
+
+### 📱 Mobile
+
+![Mobile View](src/screenshots/mobile-view%20(2).png)
+
+![Mobile Responsive](src/screenshots/mobile-responsive.png)
