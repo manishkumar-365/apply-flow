@@ -1,0 +1,102 @@
+.Add-application {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.parent-div {
+    width: 70%;
+    height: auto;
+    margin: 12px;
+    padding: 20px 15px;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+
+    color: #393939;
+    border: 2px solid hsla(280, 68%, 70%, 0.4);
+    border-radius: 12px;
+    
+}
+
+.data-input {
+    color: #393939;
+    padding: 8px 12px;
+    height: 20px;
+    border: 2px solid #E5E7EB;
+    border-radius: 12px;
+    cursor: pointer;
+}
+.data-input:focus{
+    outline: none;
+    border: 2px solid hsla(280, 73%, 50%, 0.6);
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.3)
+}
+
+.data-input:hover {
+    border-color: hsla(280, 73%, 50%, 0.6);
+    background-color: #fafafa;
+}
+
+.select-Option{
+    color: #393939;  
+    height: 38px;
+    padding: 8px 12px;
+    border: 2px solid #E5E7EB;
+    border-radius: 12px;
+    cursor: pointer;
+}
+.select-Option:hover{
+    border-color: hsla(280, 73%, 50%, 0.6);
+    background-color: #fafafa;
+}
+.select-Option:focus{
+    outline: none;
+    border: 2px solid hsla(280, 73%, 50%, 0.6);
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.3)
+}
+
+.Add-btn {
+    height: 42px;
+
+    margin-top: 22px;
+    padding: 8px 12px;
+
+    border: none;
+    border-radius: 12px;
+
+    color: white;
+    font-weight: 600;
+
+    background-color: hsl(280, 70%, 45%);
+    cursor: pointer;
+    box-shadow: 2px 2px 15px hsla(0, 0%, 50%, 0.3);
+}
+
+.Add-btn:hover {
+    background-color: hsl(280, 70%, 35%);
+}
+
+.Add-btn:active {
+    background-color: hsl(280, 70%, 55%);
+    transform: scale(1.05);
+    transition: ease(0.2s);
+}
+
+.error-message{
+    margin: 6px;
+    font-size: 14px;
+    color: hsl(0, 100%, 50%);
+}
+
+@media screen and (max-width: 600px){
+    .Add-application{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .parent-div{
+        width: 80%;
+    }
+}
