@@ -1,7 +1,7 @@
-import { use, useEffect, useState } from "react"
+import { useState } from "react"
 import './JobFormStyle.css'
 
-function JobForm( {setData, data} ) {
+function JobForm( { setApplication } ) {
     const [companyName, setCompanyName] = useState('');
     const [jobrole, setJobrole] = useState('');
     const [date, setDate] = useState('');
@@ -9,33 +9,38 @@ function JobForm( {setData, data} ) {
     const [errorMessage, setErrormessage] = useState('');
 
     const applicationData = {
+        id: crypto.randomUUID(),
         name: companyName,
         role: jobrole,
         date: date,
-        status: status,
+        status: status
     }
 
     function handleClick(e) {
         e.preventDefault();
 
-        if (companyName === '' || jobrole === '' || date === '' || status === '') {
-            setErrormessage('Please fill all the fields!!');
+        if (
+            !companyName.trim() ||
+            !jobrole.trim() ||
+            !date ||
+            !status
+        ) {
+            setErrormessage('Please fill all the fields.');
             return;
         }
 
-        if (companyName.length < 3) {
-            setErrormessage('Company Name must be greater than or equal to 3 characters!!');
+        if (companyName.trim().length < 2) {
+            setErrormessage('Company name must be at least 2 characters.');
             return;
         }
 
-        if (jobrole.length < 5) {
-            setErrormessage('Job Role must be greter than 4 characters!!');
+        if (jobrole.trim().length < 5) {
+            setErrormessage('Job role must be at least 5 characters.');
             return;
         }
 
         setErrormessage('');
-        // setting applications to store more application objects
-        setData([...data, applicationData]);
+        setApplication(prev=> [...prev, applicationData]);
 
         setCompanyName('');
         setJobrole('');
@@ -48,8 +53,9 @@ function JobForm( {setData, data} ) {
         <div className="parent-div">
             <div className="Add-application">
                 <div>
-                    <label>Company Name:</label><br />
+                    <label htmlFor="inputName">Company Name:</label><br />
                     <input
+                        id="inputName"
                         className="data-input"
                         type="text"
                         value={companyName}
@@ -58,8 +64,9 @@ function JobForm( {setData, data} ) {
                     />
                 </div>
                 <div>
-                    <label>Job Role:</label><br />
+                    <label htmlFor="inputRole">Job Role:</label><br />
                     <input
+                        id="inputRole"
                         className="data-input"
                         type="text"
                         value={jobrole}
@@ -68,8 +75,9 @@ function JobForm( {setData, data} ) {
                     />
                 </div>
                 <div>
-                    <label>Date:</label><br />
+                    <label htmlFor="inputDate">Date:</label><br />
                     <input
+                        id="inputDate"
                         className="data-input"
                         type="date"
                         value={date}
@@ -77,17 +85,23 @@ function JobForm( {setData, data} ) {
                     />
                 </div>
                 <div>
-                    <label>Status:</label><br />
-                    <select className="select-Option" value={status}
-                        onChange={(e) => setStatus(e.target.value)}>
-                        <option value=''>--Select--</option>
+                    <label htmlFor="inputStatus">Status:</label><br />
+                    <select 
+                    id="inputStatus" 
+                    className="select-Option" 
+                    value={status}
+                    onChange={(e) => setStatus(e.target.value)}>
+                        <option value=''>Choose Status</option>
                         <option value='Applied'>Applied</option>
                         <option value='Interviewed'>Interviewed</option>
                         <option value='Rejected'>Rejected</option>
                     </select>
                 </div>
                 <div>
-                    <button className="Add-btn" type="submit" onClick={handleClick} >Add Application</button>
+                    <button
+                    className="Add-btn"
+                    type="submit"
+                    onClick={handleClick}>Add Application</button>
                 </div>
             </div>
             {errorMessage && <p className="error-message">{errorMessage}</p>}

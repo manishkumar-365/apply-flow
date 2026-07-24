@@ -1,35 +1,19 @@
 
-function DashboardCards({data}){
+function DashboardCards({applications}){
 
-    const countApplied = data.filter( (index) => {
-        if(index.status==="Applied"){
-            return true;
-        }
-        else false;
-    })
+    const counts = applications.reduce( (acc,curr)=>{
 
-    const countInterview = data.filter( (index) => {
-        if(index.status==="Interviewed"){
-            return true;
-        }
-        else false;
-    })
-
-    const countRejected = data.filter( (index) => {
-        if(index.status==="Rejected"){
-            return true;
-        }
-        else false;
-    })
-
-
+        (acc[curr.status]) ? acc[curr.status]++ : acc[curr.status] = 1;
+        
+        return acc;
+    }, {})
 
     return(
         <div className="dashboard-cards">
-            <div>Total Applications: &nbsp; <span className="length-Style">{data.length}</span></div>
-            <div>Applied: &nbsp; <span className="length-Style">{countApplied.length}</span></div>
-            <div>Interview: &nbsp; <span className="length-Style">{countInterview.length}</span></div>
-            <div>Rejected: &nbsp; <span className="length-Style">{countRejected.length}</span></div>
+            <div>Total Applications: &nbsp; <span className="length-Style">{applications.length}</span></div>
+            <div>Applied: &nbsp; <span className="length-Style">{counts.Applied || 0}</span></div>
+            <div>Interview: &nbsp; <span className="length-Style">{counts.Interviewed || 0}</span></div>
+            <div>Rejected: &nbsp; <span className="length-Style">{counts.Rejected || 0}</span></div>
         </div>
     )
 }

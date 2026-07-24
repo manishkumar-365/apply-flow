@@ -15,7 +15,7 @@
     width: 100%;
     color: hsl(280, 71%, 37%);
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: 1fr 1fr 2fr 1fr 1fr 2fr;
     grid-template-rows: 1fr;
     text-align: center;
     font-weight: 500;
@@ -43,7 +43,7 @@
     height: 54px;
 
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: 1fr 1fr 2fr 1fr 1fr 2fr;
     grid-auto-rows: 1fr;
     text-align: center;
     justify-content: center;
@@ -68,6 +68,12 @@
 
     border-radius: 8px;
     cursor: pointer;
+}
+
+.Action-Btn{
+    display: flex;
+    gap: 8px;
+    justify-content: center;
 }
 
 .Edit-Btn {
@@ -134,20 +140,21 @@
     box-shadow: 0 0 5px rgba(59, 130, 246, 0.3)
 }
 
-.green-Applied {
-    color: hsl(120, 99%, 33%);
+.Applied {
+    color: hsl(278, 99%, 33%);
     font-weight: 500;
 }
 
-.orange-Interviewed {
+.Interviewed {
     color: hsl(39, 100%, 50%);
     font-weight: 500;
 }
 
-.red-Rejected {
-    color: hsl(0, 92%, 52%);
+.Rejected {
+    color: tomato;
     font-weight: 500;
 }
+
 
 @media screen and (max-width: 1100px) {
     .application-list {
