@@ -6,7 +6,7 @@ Instead of using notes or spreadsheets, ApplyFlow lets you easily add, edit, del
 
 ## 🌐 Live Demo
 
-- 🔗 **Live Project:** https://manishkumar-365.github.io/apply-flow/
+- 🔗 **Live Project:** (https://apply-flow-vert.vercel.app/)
 
 ---
 
@@ -70,9 +70,6 @@ The **Edit** feature was the most challenging part of this project, but solving 
 
 Thanks for checking out my project! 😊
 
-## Demo Video
-
-![Demo](src/screenshots/demo-video.mp4)
 
 ## 📸 Screenshots
 
